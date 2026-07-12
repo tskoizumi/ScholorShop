@@ -26,7 +26,8 @@ get '/item/:id' do
 end
 
 post '/register' do
-    user = User.create(name: params[:name], email: params[:email], point: 99999 ,pass
+    user = User.create(name: params[:name], email: params[:email], point: 99999, password: params[:password])
+
     session[:user_id] = user.id
     redirect '/'
 end
@@ -45,7 +46,7 @@ post '/new_item' do
     redirect '/login' unless current_user
     image = params[:image]
     filename = Time.now.strftime('%Y%m%d%H%M%S') + "_" + image[:filename]
-    File.open("./public/img/#{filename}", 'wb') do |f|
+    File.open("./public/uploads/#{filename}", 'wb') do |f|
         f.write(image[:tempfile].read)
     end
     Item.create(
@@ -64,11 +65,6 @@ get '/logout' do
     redirect '/'
 end
 
-
-
-
-
-
 enable :sessions
 
 helpers do
@@ -77,4 +73,4 @@ helpers do
   end
 end
 
-//テスト
+
