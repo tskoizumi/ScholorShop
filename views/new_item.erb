@@ -1,0 +1,19 @@
+<h2>出品</h2>
+<form action="/new_item" method="post">
+    <div>
+        <label for "name">商品名:</label>
+        <input type="text" id="name" placeholder="例)学ラン" name="name" required>
+        <label for "explanation">説明</label>
+        <textarea id="explanation" placeholder="例）卒業のため、出品します。"  name="explanation" required>
+        <label for="price">価格(pt)</label>
+        <input type="number" id="price" name="price" required>
+        <label for="images">商品画像</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        </div>
+    <div>
+        <label for "locker_pass">南京錠の番号</label>
+        <input type="text" id="locker_pass" placeholder="0123" name="locker_pass" required>
+        <p>※取引相手には直接伝えないでください</p>
+        </div>
+    <button type="submit">出品する</button>
+    </form>

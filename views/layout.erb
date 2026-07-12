@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScholarShop</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/img/favicon.ico">
+  <script src="/js/font.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/"><img src="/img/logo.png" width="30"></a>
+        <h1>ScholarShop</h1>
+        <% if current_user %>
+            <p>ようこそ、<%= current_user.name %>さん</p>
+            <a href="/new_item">出品</a>
+            <a href="/register">登録</a>
+            <a href="/logout">ログアウト</a>
+        <% else %>
+            <a href="/login">ログイン</a>
+            <a href="/register">登録</a>    
+        <% end %>
+        <a href="/notifications">通知:<%= 1 %>件</a>  <!--あとで実装する -->
+        </header>
+    <main>
+        <%= yield %>
+        </main>
+    <footer>
+        <p>&copy; 2026 ScholarShop</p>
+    </footer>
+</body>
+</html>

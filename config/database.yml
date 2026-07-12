@@ -1,0 +1,14 @@
+default_env: &default
+  adapter: postgresql
+  encoding: unicode
+  database: s_crud
+  host: <%= ENV['DB_HOST'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+
+development:
+  <<: *default
+
+production:
+  <<: *default
+
