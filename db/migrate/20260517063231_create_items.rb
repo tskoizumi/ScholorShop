@@ -18,7 +18,6 @@ class CreateItems < ActiveRecord::Migration[7.2]
       t.integer :status, default: 0
       t.string :locker_pass
       t.string :image
-      
       t.timestamps
     end
    create_table :chats do |t|

@@ -15,6 +15,10 @@
     <main>
       <h2>最新の商品</h2>
       <ul>
+        <% @items.each do |item| %>
+          <a href="/item/<%= item.id %>"><li><%= item.price %> <%= item.name %> <%= item.image %> </li></a>
+        <% end %>
+
         <li> <!-- each do使う？？ あとulとliの違いはなんですか-->
     <!-- <a href=""    ####詳細ページ> -->
         <h3>商品名</h3>

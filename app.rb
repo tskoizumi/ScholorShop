@@ -5,6 +5,7 @@ require 'sinatra/reloader' if development?
 require './models'
 
 get '/' do
+    @items = Item.all()
     erb :index
 end
 
@@ -21,8 +22,8 @@ get '/register' do
 end
 
 get '/item/:id' do
-    @item_id = params[:id]
-    erb:item
+    @item = Item.find_by(user_id: params[:id])
+    erb :item
 end
 
 post '/register' do
@@ -72,8 +73,3 @@ helpers do
     User.find_by(id: session[:user_id])
   end
 end
-<<<<<<< HEAD
-=======
-
-
->>>>>>> afe59c22081e3c7f75377cc894ce5400b8e3f8f2
